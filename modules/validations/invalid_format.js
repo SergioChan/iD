@@ -31,7 +31,7 @@ export function validationFormatting() {
             try {
                 const link = new URL(url);
                 // Accept normalized/encoded URLs as long as they are absolute http(s) URLs.
-                return /^https?:$/i.test(link.protocol) && !!link.hostname;
+                return /^https?:$/i.test(link.protocol);
             } catch {
                 if (strict) return false;
                 // Fallback: accept if it looks like a valid scheme://something, even if semicolons are present
